@@ -60,3 +60,9 @@ No modules.
 | <a name="output_lambda_function_name"></a> [lambda\_function\_name](#output\_lambda\_function\_name) | n/a |
 | <a name="output_lambda_function_source_code_hash"></a> [lambda\_function\_source\_code\_hash](#output\_lambda\_function\_source\_code\_hash) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+## Contributing
+
+This project uses [pre-commit](https://pre-commit.com/) for validation.
+
+Open merge requests to the `master` branch.
