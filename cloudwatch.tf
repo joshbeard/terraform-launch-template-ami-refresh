@@ -15,6 +15,6 @@ resource "aws_cloudwatch_event_target" "this_schedule" {
 
 resource "aws_cloudwatch_log_group" "this" {
   name              = "/aws/lambda/${var.name}"
-  retention_in_days = var.cloudwatch_logging_retention_in_days
+  retention_in_days = var.logging_retention_in_days
   tags              = var.tags
 }

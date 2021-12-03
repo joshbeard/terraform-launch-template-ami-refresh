@@ -9,20 +9,20 @@ variable "tags" {
   default     = {}
 }
 
-variable "role_permissions_boundary" {
+variable "permissions_boundary" {
   description = "An optional IAM permissions boundary to use when creating IAM roles."
   type        = string
   default     = null
 }
 
-variable "cloudwatch_logging_retention_in_days" {
+variable "logging_retention_in_days" {
   description = "The number of days to retain logs in CloudWatch."
   type        = number
   default     = 30
 }
 
 variable "ami_filters" {
-  description = "String of key/value pairs for the AMI filter."
+  description = "String of key/value pairs for the AMI filter. Refer to lambda.py for more info. For example: name=amzn2-ami-hvm-2.*-x86_64-ebs;owner-alias=amazon"
   type        = string
 }
 

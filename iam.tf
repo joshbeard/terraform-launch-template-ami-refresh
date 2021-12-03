@@ -20,7 +20,7 @@ resource "aws_iam_role" "lambda" {
   name                  = "${var.name}-lambda-role"
   description           = "Role for updating EC2 Launch Templates with a Lambda function"
   path                  = "/"
-  permissions_boundary  = var.role_permissions_boundary
+  permissions_boundary  = var.permissions_boundary
   assume_role_policy    = data.aws_iam_policy_document.assume_role.json
   force_detach_policies = true
   tags                  = var.tags
