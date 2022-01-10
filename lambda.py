@@ -89,8 +89,8 @@ def update_launch_template(client, **kwargs):
             DryRun=False,
             LaunchTemplateName=kwargs['Name'],
             SourceVersion=str(kwargs['SourceVersion']),
-            LaunchTemplateData={ "ImageId": latest_ami() },
-            VersionDescription=f"Automatic update for AMI {latest_ami()}"
+            LaunchTemplateData={ "ImageId": kwargs['AMI'] },
+            VersionDescription=f"Automatic update for AMI {kwargs['AMI']}"
         )
         logging.info(f"Setting the launch template default version to {str(response['LaunchTemplateVersion']['VersionNumber'])}")
 
@@ -98,8 +98,8 @@ def update_launch_template(client, **kwargs):
             LaunchTemplateName=kwargs['Name'],
             DefaultVersion=str(response['LaunchTemplateVersion']['VersionNumber'])
         )
-    except:
-        logging.critical("Failed to update launch template.")
+    except Exception as e:
+        logging.critical(f"Failed to update launch template: {e}")
 
 def handler(event, context):
     # boto3 ec2 client used by several calls below
@@ -112,7 +112,8 @@ def handler(event, context):
         update_launch_template(
             client,
             Name=launch_template,
-            SourceVersion=get_launch_template(client)['VersionNumber']
+            SourceVersion=get_launch_template(client)['VersionNumber'],
+            AMI=latest_ami(client)
         )
 
 if __name__ == "__main__":
