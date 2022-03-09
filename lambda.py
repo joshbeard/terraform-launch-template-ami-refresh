@@ -89,8 +89,7 @@ def update_launch_template(client, **kwargs):
             DryRun=False,
             LaunchTemplateName=kwargs['Name'],
             SourceVersion=str(kwargs['SourceVersion']),
-            LaunchTemplateData={ "ImageId": kwargs['AMI'] },
-            VersionDescription=f"Automatic update for AMI {kwargs['AMI']}"
+            LaunchTemplateData={ "ImageId": kwargs['AMI'] }
         )
         logging.info(f"Setting the launch template default version to {str(response['LaunchTemplateVersion']['VersionNumber'])}")
 
