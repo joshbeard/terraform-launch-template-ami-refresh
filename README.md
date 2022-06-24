@@ -44,6 +44,7 @@ No modules.
 | <a name="input_ami_filters"></a> [ami\_filters](#input\_ami\_filters) | String of key/value pairs for the AMI filter. Refer to lambda.py for more info. For example: name=amzn2-ami-hvm-2.*-x86\_64-ebs;owner-alias=amazon | `string` | n/a | yes |
 | <a name="input_cloudwatch_schedule_expression"></a> [cloudwatch\_schedule\_expression](#input\_cloudwatch\_schedule\_expression) | A CloudWatch schedule expression. See https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html. | `string` | `"rate(6 hours)"` | no |
 | <a name="input_enable_cloudwatch_schedule"></a> [enable\_cloudwatch\_schedule](#input\_enable\_cloudwatch\_schedule) | Toggles managing a CloudWatch event rule and trigger based on a schedule. | `bool` | `true` | no |
+| <a name="input_lambda_timeout"></a> [lambda\_timeout](#input\_lambda\_timeout) | The duration allowed for the Lambda function to run in seconds. | `number` | `30` | no |
 | <a name="input_launch_template_name"></a> [launch\_template\_name](#input\_launch\_template\_name) | The name of the launch template to check and update. | `string` | n/a | yes |
 | <a name="input_launch_template_version"></a> [launch\_template\_version](#input\_launch\_template\_version) | The version of the launch template to check ($Default, $Latest). | `string` | `"$Default"` | no |
 | <a name="input_logging_retention_in_days"></a> [logging\_retention\_in\_days](#input\_logging\_retention\_in\_days) | The number of days to retain logs in CloudWatch. | `number` | `30` | no |

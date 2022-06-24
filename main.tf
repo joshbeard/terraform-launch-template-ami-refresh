@@ -21,7 +21,7 @@ resource "aws_lambda_function" "this" {
   role             = aws_iam_role.lambda.arn
   runtime          = "python3.9"
   tags             = var.tags
-  timeout          = 7
+  timeout          = var.lambda_timeout
   environment {
     variables = {
       AMI_FILTERS             = var.ami_filters,
