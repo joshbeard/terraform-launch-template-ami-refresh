@@ -48,3 +48,9 @@ variable "cloudwatch_schedule_expression" {
   type        = string
   default     = "rate(6 hours)"
 }
+
+variable "lambda_timeout" {
+  description = "The duration allowed for the Lambda function to run in seconds."
+  type        = number
+  default     = 30
+}
