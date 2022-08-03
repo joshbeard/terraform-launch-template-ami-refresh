@@ -23,10 +23,10 @@ import os
 
 from dateutil import parser
 
-ami_filters             = os.environ.get('AMI_FILTERS').split(';')
-launch_template         = os.environ.get('LAUNCH_TEMPLATE_NAME')
+ami_filters = os.environ.get('AMI_FILTERS').split(';')
+launch_template = os.environ.get('LAUNCH_TEMPLATE_NAME')
 launch_template_version = os.environ.get('LAUNCH_TEMPLATE_VERSION')
-aws_region              = os.environ.get('AWS_REGION')
+aws_region = os.environ.get('AWS_REGION')
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
